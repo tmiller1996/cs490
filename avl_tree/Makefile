@@ -1,6 +1,8 @@
-CFLAGS=-std=c99 -g -Wall -Wextra -Wpedantic
+CC=gcc
+CFLAGS=-std=c99 -Wall -Wpedantic -g -Wextra
 
-all: avl_tree
-.PHONY: clean
+all: main avl_test
+main: avl_tree.o
+avl_test: avl_tree.o
 clean:
-	$(RM) avl_tree
+	$(RM) main avl_test *.o
